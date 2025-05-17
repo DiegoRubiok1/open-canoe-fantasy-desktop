@@ -1,2 +1,2 @@
 # open-canoe-fantasy-client
-Open Canoe Fantasy client for desktop
+Open Canoe Fantasy client for web and mobile
