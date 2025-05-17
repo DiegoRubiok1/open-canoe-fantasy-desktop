@@ -10,7 +10,7 @@ class OpenCanoeFantasyApp(App):
         current_dir = os.path.dirname(os.path.abspath(__file__))
         
         # Construir la ruta completa al archivo kv
-        kv_path = os.path.join(current_dir, 'screens', 'home_screen.kv')
+        kv_path = os.path.join(current_dir, 'ui', 'home_screen.kv')
         
         # Cargar el archivo kv
         Builder.load_file(kv_path)
