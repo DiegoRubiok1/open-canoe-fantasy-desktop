@@ -1,0 +1,23 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '10dp'
+        spacing: '10dp'
+
+        Label:
+            text: 'Open Canoe Fantasy'
+            font_size: '24sp'
+            size_hint_y: None
+            height: '48dp'
+        
+        Button:
+            text: 'Players'
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.go_to_players()
+        
+        Button:
+            text: 'Teams'
+            size_hint_y: None
+            height: '48dp'
+            on_press: root.go_to_teams()
