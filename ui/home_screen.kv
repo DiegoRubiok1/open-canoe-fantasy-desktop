@@ -1,24 +1,64 @@
 #:kivy 2.0.0
+
 <HomeScreen>:
     BoxLayout:
         orientation: 'vertical'
-        padding: '10dp'
-        spacing: '10dp'
+        padding: '16dp'
+        spacing: '16dp'
+        
+        # Espacio superior flexible
+        Widget:
+            size_hint_y: 0.25
 
-        Label:
+        TitleLabel:
             text: 'Open Canoe Fantasy'
-            font_size: '24sp'
             size_hint_y: None
-            height: '48dp'
+            height: '64dp'
+            halign: 'center'
+            
         
-        Button:
-            text: 'Players'
-            size_hint_y: None
-            height: '48dp'
-            on_press: root.go_to_players()
+
+        Image:
+            source: 'assets/images/app_icon.png'
+            size_hint: (0.8, None)
+            height: '150dp'  
+            pos_hint: {'center_x': 0.5}
+            allow_stretch: False
+            keep_ratio: True
+            
+            
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '16dp'
+            spacing: '16dp'
         
-        Button:
-            text: 'Teams'
-            size_hint_y: None
-            height: '48dp'
-            on_press: root.go_to_teams()
+            TitleLabel:
+                text: 'Iniciar Sesión'
+
+            TextInput:
+                id: email
+                hint_text: 'Correo electrónico'
+            
+            TextInput:
+                id: password
+                hint_text: 'Contraseña'
+                password: True
+                password_mask: '•'
+            
+            
+            Button:
+                text: 'Inicar Sesión'
+                size_hint_x: 0.8
+                pos_hint: {'center_x': 0.5}
+
+            Widget:
+                size_hint_y: 0.5
+
+            SecondaryButton:
+                text: 'Registrarse'
+                size_hint_x: 0.8
+                pos_hint: {'center_x': 0.5}
+        
+        # Espacio inferior flexible
+        Widget:
+            size_hint_y: 0.5

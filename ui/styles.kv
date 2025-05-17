@@ -1,0 +1,81 @@
+#:kivy 2.1.0
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+# Define las variables de color
+
+#:set background_color get_color_from_hex('#121212')
+#:set surface_color get_color_from_hex('#121212')
+#:set error_color get_color_from_hex('#CF6679')
+
+#:set primary_color get_color_from_hex('#BB86FC')
+#:set primary_variant_color get_color_from_hex('#3700B3')
+#:set secondary_color get_color_from_hex('#03DAC6')
+
+#:set on_primary_color get_color_from_hex('#000000')
+#:set on_secondary_color get_color_from_hex('#000000')
+#:set on_background_color get_color_from_hex('#FFFFFF')
+#:set on_surface_color get_color_from_hex('#FFFFFF')
+#:set on_error_color get_color_from_hex('#000000')
+
+# Estilos globales para widgets comunes
+<Label>:
+    font_name: 'goli'
+    font_size: '16sp'
+    color: on_background_color
+
+<Button>:
+    font_name: 'goli'
+    font_size: '16sp'
+    background_normal: ''
+    background_color: primary_color
+    color: on_primary_color
+    size_hint_y: None
+    height: '48dp'
+    padding: '16dp'
+
+<TextInput>:
+    font_name: 'goli'
+    font_size: '16sp'
+    background_color: surface_color
+    foreground_color: primary_color
+    cursor_color: secondary_color
+    padding: '12dp'
+    multiline: False
+    size_hint_y: None
+    height: '48dp'
+
+<BoxLayout>:
+    padding: '16dp'
+    spacing: '8dp'
+    canvas.before:
+        Color:
+            rgba: background_color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+# Estilo para botones secundarios
+<SecondaryButton@Button>:
+    background_color: secondary_color
+    color: on_secondary_color
+
+# Estilo para botones de error/eliminación
+<ErrorButton@Button>:
+    background_color: error_color
+    color: on_primary_color
+
+# Estilo para títulos
+<TitleLabel@Label>:
+    font_size: '24sp'
+    bold: True
+    size_hint_y: None
+    height: '56dp'
+
+# Estilo para subtítulos
+<SubtitleLabel@Label>:
+    font_size: '20sp'
+    bold: True
+    size_hint_y: None
+    height: '48dp'
+
+
