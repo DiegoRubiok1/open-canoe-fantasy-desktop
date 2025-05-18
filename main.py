@@ -1,6 +1,7 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager
 from screens.home_screen import HomeScreen
+from screens.register_screen import RegisterScreen
 from utils.ui_loader import load_kv_files
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
@@ -27,6 +28,7 @@ class OpenCanoeFantasyApp(App):
         
         sm = ScreenManager()
         sm.add_widget(HomeScreen(name='home'))
+        sm.add_widget(RegisterScreen(name='register'))
         return sm
     
     def register_fonts(self):

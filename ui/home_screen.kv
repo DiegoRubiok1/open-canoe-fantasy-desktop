@@ -8,7 +8,7 @@
         
         # Espacio superior flexible
         Widget:
-            size_hint_y: 0.25
+            size_hint_y: 0.1
 
         TitleLabel:
             text: 'Open Canoe Fantasy'
@@ -43,13 +43,20 @@
                 id: password
                 hint_text: 'Contraseña'
                 password: True
-                password_mask: '•'
             
+            Label:
+                text: root.error_message
+                color: error_color  # Usando el color de error definido en styles.kv
+                size_hint_y: None
+                height: self.texture_size[1]
+                opacity: 1 if root.error_message else 0
             
+
             Button:
-                text: 'Inicar Sesión'
+                text: 'Iniciar Sesión'
                 size_hint_x: 0.8
                 pos_hint: {'center_x': 0.5}
+                on_release: root.login()
 
             Widget:
                 size_hint_y: 0.5
@@ -58,7 +65,8 @@
                 text: 'Registrarse'
                 size_hint_x: 0.8
                 pos_hint: {'center_x': 0.5}
+                on_release: root.register()
         
         # Espacio inferior flexible
         Widget:
-            size_hint_y: 0.5
+            size_hint_y: 0.1

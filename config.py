@@ -6,5 +6,5 @@ WINDOW_CONFIG = {
     'minimum_height': 640
 }
 
-BASE_URL = 'https://opencanoefantasy.com'
-BASE_URL_DEVELOPMENT = 'http://localhost:5000/api'
+BASE_URL = 'http://localhost:5000/api'
+TOKEN = None
